@@ -1,10 +1,10 @@
 const express = require("express");
 const {
-	getAllUsers,
-	createUser,
-	getUser,
-	updateUser,
-	deleteUser,
+  getAllUsers,
+  createUser,
+  getUser,
+  updateUser,
+  deleteUser,
 } = require("../controllers/userController");
 const authController = require("../controllers/authController");
 
@@ -12,8 +12,11 @@ const router = express.Router();
 
 // signup
 router.post("/signup", authController.signup);
+// login
 router.post("/login", authController.login);
 
+router.post("/forgotPassword", authController.forgotPassword);
+router.post("/resetPassword", authController.resetPassword);
 
 //USER ROUTES
 router.route("/").get(getAllUsers).post(createUser);
