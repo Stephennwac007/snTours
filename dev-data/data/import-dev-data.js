@@ -5,7 +5,7 @@ const Tour = require("./../../models/tourModel");
 
 dotenv.config({ path: "./.env" });
 
-const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DB_PASSWORD);
+const DB = process.env.DATABASE.replace("<password>", process.env.DB_PASSWORD);
 
 mongoose
 	.connect(DB, {
@@ -23,7 +23,7 @@ mongoose
 
 // read json file synchronously using
 const tours = JSON.parse(
-	fs.readFileSync(`${__dirname}/tours-simple.json`, "utf-8")
+	fs.readFileSync(`${__dirname}/tours.json`, "utf-8")
 );
 
 //IMPORT DATA INTO DB

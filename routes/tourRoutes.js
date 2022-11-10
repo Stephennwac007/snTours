@@ -12,6 +12,7 @@ const {
   getMonthlyPlan,
 } = require("../controllers/tourController");
 const authController = require("../controllers/authController");
+const reviewRouter = require("./../routes/reviewRoutes");
 
 const router = express.Router();
 
@@ -42,4 +43,22 @@ router
     deleteTour
   );
 
+// POST /tours/:tourId/reviews
+// GET /tours/:tourId/reviews
+
+router.use("/:tourId/reviews", reviewRouter);
+
+// GET /tours/:tourId/reviews/:reviewId
+
+
+// router
+//   .route("/:id/reviews")
+//   .post(
+//     authController.protect,
+//     authController.restrictTo("user"),
+//     reviewController.createReview
+//   );
+
 module.exports = router;
+
+// chapter 12

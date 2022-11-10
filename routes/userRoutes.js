@@ -26,12 +26,12 @@ router.patch(
   authController.updateMyPassword
 );
 
-router.patch('/updateMe', authController.protect, updateMe);
+router.patch("/updateMe", authController.protect, updateMe);
 
-router.delete('/deleteMe', authController.protect, deleteMe);
+router.delete("/deleteMe", authController.protect, deleteMe);
 
 //USER ROUTES
-router.route("/").get(getAllUsers).post(createUser);
+router.route("/").get(getAllUsers);
 
 router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 
